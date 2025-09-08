@@ -6,14 +6,7 @@ import { getAuth, signInAnonymously, onAuthStateChanged, signOut, signInWithCust
 // --- Firebase Configuration ---
 // This configuration checks for a global variable provided by the environment.
 // If it's not found, it falls back to placeholder values.
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
-};
+const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
 
 
 // --- App Initialization ---
